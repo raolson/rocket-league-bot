@@ -71,7 +71,7 @@ class Finder(object):
                         text = comment.body.encode('utf-8').lower()
                         if all(x in text for x in itemList):
                             commentList.append(self.formatAsLink(text, submission.url))
-        response = self.formatResponse(self.postList, self.commentList)
+        response = self.formatResponse(postList, commentList)
         return response
 
     def formatAsLink(self, text, url):
