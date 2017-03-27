@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import praw
 import sys
+from DBConnect import Connect
 
 
 class Finder(object):
@@ -36,6 +37,8 @@ class Finder(object):
                         # Write IDs of replied post
                         self.writeReplied(repliedContent)
 
+                        # Store in sqlite db
+                        Connect().storeData(submission.id, title, results)
                         """
                         Exiting after 1 reply per API limit
                         Profile needs more karma to increase limit
