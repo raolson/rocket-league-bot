@@ -60,7 +60,7 @@ class Finder(object):
         commentList = []
         reddit = praw.Reddit(self.botProfile)
         subreddit = reddit.subreddit(self.subFind)
-        for submission in subreddit.new(limit=300):
+        for submission in subreddit.new(limit=500):
             title = str(submission.title.encode('utf-8')).lower()
 
             if platform and platform in title:
